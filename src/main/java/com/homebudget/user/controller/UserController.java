@@ -1,4 +1,4 @@
-package com.user.controller;
+package com.homebudget.user.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.user.dto.UserDTO;
-import com.user.entity.User;
-import com.user.service.UserRepository;
-import com.user.service.UserService;
+import com.homebudget.user.dto.UserDTO;
+import com.homebudget.user.entity.User;
+import com.homebudget.user.service.UserRepository;
+import com.homebudget.user.service.UserService;
 
 @RestController
 public class UserController {
@@ -27,7 +27,7 @@ public class UserController {
 		User user = new User();
 		user.setNick("bkokos3");
 		user.setEmail("kokos4@skokos.pl");
-		user.setPassword("kokospass");
+		user.setPassword("kokospass");		
 		return userRepository.save(user);
 	}
 	
@@ -37,8 +37,10 @@ public class UserController {
 	}
 	
 	@GetMapping("/nick")
-	public User findUserByNick(@RequestParam(value="nick") String nick) {
-		return userService.findUserByNick(nick);
+	public UserDTO findUserByNick(@RequestParam(value="nick") String nick) {
+		User user = userService.findUserByNick(nick);
+		UserDTO uDTO = new UserDTO(user);	
+		return uDTO;
 	}
 	
 	@PutMapping("/user")

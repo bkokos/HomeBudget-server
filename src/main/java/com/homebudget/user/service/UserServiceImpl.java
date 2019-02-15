@@ -1,4 +1,4 @@
-package com.user.service;
+package com.homebudget.user.service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.user.entity.User;
+import com.homebudget.user.entity.User;
 
 @Service
 @Transactional
@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService{
 	
 	public User findUserByNick(String nick) {
 		TypedQuery<User> query = em.createQuery("select u from User u where u.nick = :nick", User.class);
-		query.setParameter("nick", nick);
+		query.setParameter("nick", nick);		
 		return query.getSingleResult();
 	}
 }

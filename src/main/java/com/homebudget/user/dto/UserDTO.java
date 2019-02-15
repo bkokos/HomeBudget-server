@@ -1,10 +1,21 @@
-package com.user.dto;
+package com.homebudget.user.dto;
+
+import com.homebudget.user.entity.User;
 
 public class UserDTO {
 
 	private String nick;
 	private String email;
 	private String password;
+
+	public UserDTO() {
+	}
+
+	public UserDTO(User user) {
+		this.nick = user.getNick();
+		this.email = user.getEmail();
+		this.password = user.getPassword();
+	}
 
 	public String getNick() {
 		return nick;

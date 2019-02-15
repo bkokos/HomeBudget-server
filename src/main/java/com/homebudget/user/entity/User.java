@@ -1,4 +1,4 @@
-package com.user.entity;
+package com.homebudget.user.entity;
 
 import java.util.Date;
 
@@ -22,7 +22,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(unique = true)
+	@Column(unique = false)
 	private String nick;
 
 	@Column(unique = true)
