@@ -15,7 +15,7 @@ public class SavingsController {
 	@Autowired
 	SavingsService savingsService;
 
-	@GetMapping("/get-all")
+	@GetMapping("/get-all-savings")
 	public List<Savings> getAllSavings(Long walletID) {
 		return savingsService.getAllSavingsBy(walletID);
 	}

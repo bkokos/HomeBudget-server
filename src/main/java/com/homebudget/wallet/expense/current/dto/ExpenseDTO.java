@@ -7,16 +7,16 @@ public class ExpenseDTO {
 	private BigDecimal value;
 	private String userName;
 	private Long walletId;
-	private String description;
+	private String desc;
 
 	public ExpenseDTO() {
 	}
 
-	public ExpenseDTO(BigDecimal value, String userName, Long walletId, String description) {
+	public ExpenseDTO(BigDecimal value, String userName, Long walletId, String desc) {
 		this.value = value;
 		this.userName = userName;
 		this.walletId = walletId;
-		this.description = description;
+		this.desc = desc;
 	}
 
 	public BigDecimal getValue() {
@@ -44,11 +44,11 @@ public class ExpenseDTO {
 	}
 
 	public String getDesc() {
-		return description;
+		return desc;
 	}
 
-	public void setDesc(String description) {
-		this.description = description;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 }

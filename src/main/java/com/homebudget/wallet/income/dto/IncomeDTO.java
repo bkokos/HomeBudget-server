@@ -7,17 +7,16 @@ public class IncomeDTO {
 	private BigDecimal value;
 	private String userName;
 	private Long walletId;
-	private String description;
+	private String desc;
 
 	public IncomeDTO() {
 	}
 
-	public IncomeDTO(BigDecimal value, String userName, Long walletId, String description) {
-		super();
+	public IncomeDTO(BigDecimal value, String description, String userName, Long walletId) {
 		this.value = value;
 		this.userName = userName;
 		this.walletId = walletId;
-		this.description = description;
+		this.desc = description;
 	}
 
 	public BigDecimal getValue() {
@@ -44,12 +43,12 @@ public class IncomeDTO {
 		this.walletId = walletId;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDesc() {
+		return desc;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}	
 
 }

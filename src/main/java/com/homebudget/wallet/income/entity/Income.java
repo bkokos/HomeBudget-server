@@ -32,7 +32,7 @@ public class Income {
 	@Column(nullable = false)
 	private Long walletId;
 
-	@Column(name = "description")
+	@Column(name = "description", nullable = false)
 	private String desc;
 	
 	@Column
